@@ -1,0 +1,46 @@
+{
+  "name": "@pras-ui/crux",
+  "version": "1.0.3",
+  "author": {
+    "name": "PRAS Samin",
+    "email": "prassamin@gmail.com",
+    "url": "https://pras.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pras-ui/crux.git",
+    "directory": "packages/crux"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsup"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "dependencies": {
+    "react": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.2",
+    "typescript": "^5.8.3"
+  }
+}

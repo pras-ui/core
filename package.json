@@ -1,0 +1,20 @@
+{
+  "name": "pras-ui",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.2",
+    "@internal/config": "workspace:*",
+    "typescript": "^5.8.3",
+    "@types/bun": "latest"
+  },
+  "dependencies": {
+    "@floating-ui/react-dom": "^2.1.2"
+  },
+  "module": "index.ts"
+}

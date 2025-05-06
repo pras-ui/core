@@ -1,0 +1,37 @@
+{
+  "name": "@pras-ui/popup-menu",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.1",
+    "@types/react-dom": "^19.1.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@keybindy/react": "^1.0.0",
+    "@pras-ui/crux": "workspace:*",
+    "@pras-ui/floating-kit": "workspace:*",
+    "@pras-ui/menu": "workspace:*",
+    "@pras-ui/presence": "workspace:*",
+    "@pras-ui/shared-ui": "workspace:*",
+    "@pras-ui/slot": "workspace:*",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "@internal/config",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.js"
+    },
+    "./tsup": {
+      "types": "./dist/tsup.d.ts",
+      "require": "./dist/tsup.js",
+      "import": "./dist/tsup.js"
+    },
+    "./tsconfig.build.json": {
+      "types": "./dist/tsconfig.build.json",
+      "import": "./dist/tsconfig.build.json",
+      "require": "./dist/tsconfig.build.json"
+    }
+  },
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsc && cp src/tsconfig.build.json dist",
+    "postbuild": "echo 'Package built successfully!'",
+    "postpublish": "echo 'Package published successfully!'",
+    "publish": "npm publish"
+  },
+  "private": true,
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "dependencies": {
+    "@eslint/js": "^9.25.1",
+    "eslint": "^9.25.1",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.0.0",
+    "tsup": "^8.4.0",
+    "typescript-eslint": "^8.31.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

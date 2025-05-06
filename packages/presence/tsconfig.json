@@ -1,0 +1,9 @@
+{
+  "extends": "@internal/config/tsconfig.build.json",
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM"],
+    "outDir": "dist",
+  },
+  "include": ["src"],
+  "exclude": ["dist", "node_modules"]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "@pras-ui/presence",
+  "version": "0.0.0",
+  "author": {
+    "name": "PRAS Samin",
+    "email": "prassamin@gmail.com",
+    "url": "https://pras.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pras-ui/crux.git",
+    "directory": "packages/presence"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsup"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@types/react": "^19.1.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@pras-ui/crux": "workspace:*",
+    "@pras-ui/slot": "workspace:*",
+    "react": "^19.1.0"
+  }
+}

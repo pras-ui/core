@@ -1,0 +1,32 @@
+{
+  "name": "@pras-ui/menu",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@keybindy/react": "^1.0.0",
+    "@pras-ui/crux": "workspace:*",
+    "@pras-ui/slot": "workspace:*",
+    "react": "^19.1.0"
+  }
+}
