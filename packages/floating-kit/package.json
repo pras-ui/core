@@ -23,7 +23,6 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@keybindy/react": "^1.0.1",
     "@pras-ui/core": "workspace:*",
     "@pras-ui/shared-ui": "workspace:*",
     "@pras-ui/slot": "workspace:*",

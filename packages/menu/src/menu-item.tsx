@@ -79,6 +79,8 @@ export const MenuItem = React.forwardRef<
           }
         })}
         onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+          e.stopPropagation();
+
           let shouldPreventClose = false;
 
           const enhancedEvent = Object.assign(e, {

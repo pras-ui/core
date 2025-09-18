@@ -22,6 +22,7 @@ export const [PopupMenuProvider, usePopupMenuContext] =
  * ----------------------------------------------------------------------------------*/
 interface PopupMenuProps extends React.ComponentProps<typeof MenuRoot> {
   mode?: "default" | "context";
+  shortcuts?: Array<UiCore.ShortcutType>;
 }
 
 export const PopupMenuRoot = ({
@@ -31,18 +32,22 @@ export const PopupMenuRoot = ({
   onOpenChange,
   mode = "default",
   dir,
+  shortcuts,
 }: PopupMenuProps) => {
+  const scopeId = UiCore.useId();
   return (
-    <PopupMenuProvider scopeId={UiCore.useId()} value={{ mode }}>
-      <MenuRoot
-        dir={dir}
-        open={openProp}
-        defaultOpen={defaultOpen}
-        onOpenChange={onOpenChange}
-      >
-        <FloatingRoot>{children}</FloatingRoot>
-      </MenuRoot>
-    </PopupMenuProvider>
+   <UiCore.ShortcutProvider scope={scopeId} shortcuts={shortcuts}>
+      <PopupMenuProvider scopeId={scopeId} value={{ mode }}>
+        <MenuRoot
+          dir={dir}
+          open={openProp}
+          defaultOpen={defaultOpen}
+          onOpenChange={onOpenChange}
+        >
+          <FloatingRoot>{children}</FloatingRoot>
+        </MenuRoot>
+      </PopupMenuProvider>
+   </UiCore.ShortcutProvider>
   );
 };
 

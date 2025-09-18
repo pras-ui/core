@@ -37,6 +37,7 @@
     "README.md"
   ],
   "dependencies": {
+    "@keybindy/react": "^1.1.11",
     "react": "^19.1.0"
   },
   "devDependencies": {

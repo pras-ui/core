@@ -276,7 +276,7 @@ export const MenuContent = React.forwardRef<
           dir === "ltr"
             ? [["Arrow Left"], ["Esc"]]
             : [["Arrow Right"], ["Esc"]],
-          (e) => {
+          (e: KeyboardEvent) => {
             if (typeof maybeSetOpen === "function") {
               if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
                 const triggerEl = SubmenuRegistry.pop();
@@ -317,7 +317,7 @@ export const MenuContent = React.forwardRef<
       } else {
         shortcut.register(
           [["Esc"]],
-          (e) => {
+          (e: KeyboardEvent) => {
             const menuId = menuEl.getAttribute("data-content-id");
             let escapePrevented = false;
             let isMenuCloseable = true;
