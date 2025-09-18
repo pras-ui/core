@@ -1,5 +1,6 @@
-import { createContextScope, useControllableState } from "@pras-ui/crux";
-import { useId } from "react";
+import { createContextScope, useControllableState } from "@pras-ui/core";
+import { useId } from "@pras-ui/core";
+import { DirectionProvider } from "@pras-ui/direction";
 
 export const __submenuSetOpenSymbol__ = Symbol("__submenu_set_open__");
 
@@ -22,6 +23,7 @@ interface MenuRootProps {
   open?: boolean;
   defaultOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
+  dir?: "ltr" | "rtl";
 }
 
 export const MenuRoot = ({
@@ -29,6 +31,7 @@ export const MenuRoot = ({
   open,
   defaultOpen,
   onOpenChange,
+  dir,
 }: MenuRootProps) => {
   const [openState, setOpen] = useControllableState({
     value: open,
@@ -36,9 +39,11 @@ export const MenuRoot = ({
     onChange: onOpenChange,
   });
   return (
-    <MenuProvider scopeId={useId()} value={{ open: openState, setOpen }}>
-      {children}
-    </MenuProvider>
+    <DirectionProvider dir={dir}>
+      <MenuProvider scopeId={useId()} value={{ open: openState, setOpen }}>
+        {children}
+      </MenuProvider>
+    </DirectionProvider>
   );
 };
 

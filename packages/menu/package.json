@@ -24,8 +24,9 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@keybindy/react": "^1.0.0",
-    "@pras-ui/crux": "workspace:*",
+    "@keybindy/react": "^1.0.1",
+    "@pras-ui/core": "workspace:*",
+    "@pras-ui/direction": "workspace:*",
     "@pras-ui/slot": "workspace:*",
     "react": "^19.1.0"
   }

@@ -1,6 +1,6 @@
 {
   "name": "@pras-ui/presence",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": {
     "name": "PRAS Samin",
     "email": "prassamin@gmail.com",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pras-ui/crux.git",
+    "url": "git+https://github.com/pras-ui/core.git",
     "directory": "packages/presence"
   },
   "license": "MIT",
@@ -43,7 +43,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@pras-ui/crux": "workspace:*",
+    "@pras-ui/core": "workspace:*",
     "@pras-ui/slot": "workspace:*",
     "react": "^19.1.0"
   }

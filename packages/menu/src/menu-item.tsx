@@ -1,11 +1,12 @@
 import { Element } from "@pras-ui/slot";
 import React from "react";
-import { submenuRegistry } from "./submenuRegistry";
+import { SubmenuRegistry } from "./submenu-registry";
 import { useMenuContext } from "./menu-root";
 import {
   ComponentPropsWithoutInternalProps,
   composeEventHandlers,
-} from "@pras-ui/crux";
+  useMergeRefs,
+} from "@pras-ui/core";
 
 /* ------------------------------------------------------------------------------------
  * MenuItem
@@ -30,7 +31,7 @@ interface MenuItemProps
   onClick?: (e: MenuItemClickEvent) => void;
 }
 
-type MenuItemClickEvent = React.MouseEvent<HTMLButtonElement> & {
+export type MenuItemClickEvent = React.MouseEvent<HTMLButtonElement> & {
   /**
    * Manually control the open state of the menu.
    *
@@ -59,20 +60,20 @@ export const MenuItem = React.forwardRef<
       closeOnSelect = true,
       ...props
     },
-    ref
+    forwardRef
   ) => {
     const { setOpen } = useMenuContext();
+    const ref = React.useRef<HTMLButtonElement>(null);
 
     return (
       <Element.button
-        ref={ref}
+        ref={useMergeRefs(ref, forwardRef)}
         role="menuitem"
         tabIndex={disabled ? -1 : 0}
         aria-disabled={disabled}
         data-disabled={disabled ? "" : undefined}
-        data-state="item"
         onMouseEnter={composeEventHandlers(onMouseEnter, () => {
-          submenuRegistry.closeLast();
+          SubmenuRegistry.closeLast();
           if (document.activeElement instanceof HTMLElement) {
             document.activeElement.blur();
           }

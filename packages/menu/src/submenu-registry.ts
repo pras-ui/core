@@ -14,8 +14,12 @@ export class SubMenuRegistry {
     return this.stack.pop()?.el;
   }
 
+  get(): HTMLElement | undefined {
+    return this.stack.at(-1)?.el;
+  }
+
   closeLast() {
-    const last = this.stack[this.stack.length - 1];
+    const last = this.stack.at(-1);
     if (last) last.close();
   }
 
@@ -24,4 +28,4 @@ export class SubMenuRegistry {
   }
 }
 
-export const submenuRegistry = new SubMenuRegistry();
+export const SubmenuRegistry = new SubMenuRegistry();

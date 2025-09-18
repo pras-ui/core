@@ -1,4 +1,4 @@
-# @pras-ui/crux
+# @pras-ui/core
 
 ## 1.0.3
 

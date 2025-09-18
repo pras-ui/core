@@ -64,7 +64,8 @@ type ContextScopeReturn<T> = readonly [
  */
 export function createContextScope<OwnValue>(
   scopeName: string,
-  pluginScopes: CreateScope[] = []
+  pluginScopes: CreateScope[] = [],
+  defaultValue?: OwnValue
 ): ContextScopeReturn<OwnValue> {
   const BaseContext = createContext<ScopeContext>({});
   BaseContext.displayName = `${scopeName}ScopeContext`;
@@ -99,6 +100,10 @@ export function createContextScope<OwnValue>(
     const target = scope?.[scopeName] ?? currentScope[scopeName];
 
     if (!target) {
+      if (defaultValue !== undefined) {
+        return { ...defaultValue, __scopeId: "__default__" };
+      }
+
       throw new Error(
         `[${scopeName}] context is missing. Make sure you are using the Provider.`
       );
@@ -113,7 +118,6 @@ export function createContextScope<OwnValue>(
       [scopeName]: useContext(BaseContext)[scopeName],
     };
 
-    // Merge all plugin scopes into the base scope
     const extendedScope = pluginScopes.reduce(
       (acc, createPluginScope) => ({
         ...acc,

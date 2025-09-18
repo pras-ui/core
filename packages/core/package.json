@@ -1,5 +1,5 @@
 {
-  "name": "@pras-ui/crux",
+  "name": "@pras-ui/core",
   "version": "1.0.3",
   "author": {
     "name": "PRAS Samin",
@@ -8,8 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pras-ui/crux.git",
-    "directory": "packages/crux"
+    "url": "git+https://github.com/pras-ui/core.git",
+    "directory": "packages/core"
   },
   "license": "MIT",
   "type": "module",

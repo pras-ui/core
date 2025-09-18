@@ -1,3 +1,3 @@
-# @pras-ui/crux
+# @pras-ui/core
 
 documentation not published yet

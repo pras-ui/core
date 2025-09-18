@@ -5,7 +5,7 @@ import {
   createSlot as RadixCreateSlot,
   createSlottable as RadixCreateSlottable,
 } from "@radix-ui/react-slot";
-import { useMergeRefs } from "@pras-ui/crux";
+import { useMergeRefs } from "@pras-ui/core";
 
 type AnyTag = React.ElementType;
 
@@ -44,11 +44,12 @@ function createTag<E extends AnyTag>(defaultTag: E) {
       }
 
       if (!asChild && childProps && React.isValidElement(children)) {
+        const { ref: childPropsRef, ...otherChildProps } = childProps as any;
         return (
-          <Component {...props} ref={ref}>
+          <Component {...props}>
             {React.cloneElement(children, {
-              ...childProps,
-              ref: useMergeRefs(ref, (children as any).props.ref),
+              ...otherChildProps,
+              ref: useMergeRefs(ref, (children as any).props.ref, childPropsRef),
             })}
           </Component>
         );

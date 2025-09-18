@@ -5,7 +5,7 @@
 ### Patch Changes
 
 - Fixed dependency install issue
-  - @pras-ui/crux@1.0.3
+  - @pras-ui/core@1.0.3
 
 ## 1.0.1
 
@@ -13,7 +13,7 @@
 
 - re-publishing
 - Updated dependencies
-  - @pras-ui/crux@1.0.1
+  - @pras-ui/core@1.0.1
 
 ## 1.0.0
 
@@ -24,4 +24,4 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @pras-ui/crux@1.0.0
+  - @pras-ui/core@1.0.0

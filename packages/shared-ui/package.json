@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pras-ui/crux.git",
+    "url": "git+https://github.com/pras-ui/core.git",
     "directory": "packages/shared-ui"
   },
   "license": "MIT",
@@ -30,7 +30,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "private": false,
+  "private": true,
   "sideEffects": false,
   "files": [
     "dist",

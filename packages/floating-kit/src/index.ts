@@ -1,15 +1,32 @@
-export type { Align, Side } from "./types";
+export { FloatingTrigger } from "./floating-trigger";
+
+export { FloatingPortal } from "./floating-portal";
+
 export {
-  FloatingAnchor,
-  FloatingContent,
-  FloatingPortal,
+  // component
   FloatingRoot,
-  FloatingContentProvider,
+
+  // scope
   FloatingProvider,
-  createFloatingContentScope,
-  useFloatingContentContext,
   createFloatingScope,
   useFloatingContext,
-  FloatingArrow,
+} from "./floating-root";
+
+export {
+  // component
+  FloatingContent,
+
+  // scope
+  FloatingContentProvider,
+  createFloatingContentScope,
+  useFloatingContentContext,
+
+  // types
+  type Align,
+  type Side,
+
+  // public utils
   shouldMount,
-} from "./floating";
+} from "./floating-content";
+
+export { FloatingArrow } from "./floating-arrow";

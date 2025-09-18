@@ -7,7 +7,7 @@ export interface PortalProps {
    */
   children?: React.ReactNode;
   /**
-   * The element to render the children into. 
+   * The element to render the children into.
    * @default document.body
    */
   to?: Element | DocumentFragment | null;
@@ -27,7 +27,7 @@ export interface PortalProps {
  * where a DOM is not available.
  *
  * @example
- * import { Portal } from "@pras-ui/crux";
+ * import { Portal } from "@pras-ui/core";
  *
  * function Modal() {
  *   return (

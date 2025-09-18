@@ -19,6 +19,9 @@
 
     "outDir": "dist",
 
-    "noEmitOnError": true
+    "noEmitOnError": true,
+
+    // Test typings
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
   }
 }
